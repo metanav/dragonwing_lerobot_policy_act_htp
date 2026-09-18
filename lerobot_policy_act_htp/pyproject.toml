@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lerobot_policy_act_htp"
+version = "0.1.0"
+description = "ACT policy inference on Qualcomm Hexagon NPU via a Qualcomm-AI-Hub-compiled .tflite artifact, plugged into lerobot-rollout as a custom policy type."
+requires-python = ">=3.10"
+dependencies = [
+    "lerobot",
+    "numpy",
+]
+
+# ai-edge-litert (the TFLite runtime + QNN delegate loader) is only
+# installable/usable on the IQ-9075 board itself, not on a dev machine
+# like a Mac -- so it's an optional extra, imported lazily inside the
+# policy class rather than a hard dependency, so this package still
+# installs and is importable (for config inspection, testing, etc.) on
+# machines that will never run inference.
+[project.optional-dependencies]
+htp = ["ai-edge-litert"]
+
+[tool.setuptools.packages.find]
+include = ["lerobot_policy_act_htp*"]

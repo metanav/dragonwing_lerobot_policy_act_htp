@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: lerobot_policy_act_htp
+Version: 0.1.0
+Summary: ACT policy inference on Qualcomm Hexagon NPU via a Qualcomm-AI-Hub-compiled .tflite artifact, plugged into lerobot-rollout as a custom policy type.
+Requires-Python: >=3.10
+Requires-Dist: lerobot
+Requires-Dist: numpy
+Provides-Extra: htp
+Requires-Dist: ai-edge-litert; extra == "htp"

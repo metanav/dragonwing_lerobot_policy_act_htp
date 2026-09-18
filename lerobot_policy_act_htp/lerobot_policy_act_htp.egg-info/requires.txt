@@ -1,0 +1,5 @@
+lerobot
+numpy
+
+[htp]
+ai-edge-litert
