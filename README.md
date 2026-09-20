@@ -1,6 +1,6 @@
 # lerobot_policy_act_htp
 
-Plugs a Qualcomm-AI-Hub-compiled ACT `.tflite` model into `lerobot-rollout`
+Plugs a Qualcomm AI Hub compiled/exported ACT `.tflite` model into `lerobot-rollout`
 as a first-class `--policy.type=act_htp`, reusing LeRobot's real CLI,
 strategies, robot connection, camera capture, and normalization pipeline.
 
@@ -14,7 +14,7 @@ pip install -e /path/to/lerobot_policy_act_htp
 
 ## Prepare your checkpoint directory
 
-Modify the trained checkpoint's `config.json` says `"type": "act"` to "type": "act_htp"`
+Modify the trained checkpoint's `config.json` says `"type": "act"` to `"type": "act_htp"`
 so `lerobot-rollout` routes to this policy instead of the standard PyTorch `ACTPolicy`
 
 ```bash
